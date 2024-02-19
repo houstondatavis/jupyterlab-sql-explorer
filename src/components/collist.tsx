@@ -233,7 +233,7 @@ export class ColList extends React.Component<TColProps, TColState> {
     } else {
       const cols = new Array<string>();
       checked.forEach(c => {
-        const comment = col_names[c].trim();
+        const comment = (col_names[c] || '').trim();
         if (comment) {
           cols.push(`    t.\`${c}\` /* ${comment} */`);
         } else {
